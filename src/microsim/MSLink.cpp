@@ -518,6 +518,11 @@ MSLink::opened(SUMOTime arrivalTime, double arrivalSpeed, double leaveSpeed, dou
     if (haveRed() && !ignoreRed) {
         return false;
     }
+
+    if (haveYellow()) {
+        return false;
+    }
+
     if (isCont() && MSGlobals::gUsingInternalLanes) {
         return true;
     }
